@@ -9,9 +9,17 @@ namespace :greeting do
   task :hola do
     puts "hola de Rake!"
   end
-end 
+end
 
-namespace :db do 
+namespace :db do
   desc 'migrate changes to database'
-  task :migrate => :environment do 
+  task :migrate => :environment do
     Student.create_table
+  end
+
+  desc 'seed the database with dummy data'
+  task :seed do
+    require_relative './db/seeds.rb'
+  end 
+   
+end 
