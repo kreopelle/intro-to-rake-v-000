@@ -11,6 +11,8 @@ namespace :greeting do
   end
 end
 
+desc 'access the environment file'
+
 namespace :db do
   desc 'migrate changes to database'
   task :migrate => :environment do
@@ -21,5 +23,5 @@ namespace :db do
   task :seed do
     require_relative './db/seeds.rb'
   end 
-   
-end 
+
+end
